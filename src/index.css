@@ -412,36 +412,53 @@ input[type=range] {
     flex: 1;
 }
 
-/* Position the wrapper so the dropdown aligns to it */
+/* Cart dropdown wrapper */
 .cart-dropdown-wrapper {
     position: relative;
     display: inline-block;
 }
 
+/* Cart icon button */
+.cart-icon-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+.cart-icon-link:hover {
+    color: #0056b3;
+}
+
 /* The actual dropdown box */
 .cart-dropdown {
-    display: none; 
+    display: none;
     position: absolute;
     right: 0;
-    top: 100%;
-    width: 220px;
+    top: 130%;
+    width: 260px;
+    max-height: 300px;
+    overflow-y: auto;
     background-color: #1a1a1a;
     border: 1px solid #333;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 1000;
-    text-align: center;
+    text-align: left;
 }
 
-/* Show the box only when hovering over the wrapper */
+/* Show dropdown only when hovering on cart */
 .cart-dropdown-wrapper:hover .cart-dropdown {
     display: block;
 }
 
-/* Styling the 'empty' message and footer */
+/* Styling the cart messages and footer */
 .empty-cart-msg {
-    color: #888;
+    color: #ccc;
     font-size: 14px;
     margin: 10px 0;
 }
@@ -450,17 +467,22 @@ input[type=range] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 12px;
+    gap: 10px;
 }
 
 .btn-mini {
     background-color: #0056b3;
     color: white;
     border: none;
-    padding: 5px 8px;
+    padding: 6px 10px;
     border-radius: 4px;
     font-size: 11px;
     cursor: pointer;
+}
+
+.btn-mini:hover {
+    background-color: #004494;
 }
 
 /* Fix positioning for the intro section elements */

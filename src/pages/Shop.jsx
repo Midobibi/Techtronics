@@ -32,16 +32,12 @@ const PRODUCTS = [
   },
 ];
 
-function Shop() {
+function Shop({ addToCart }) {
   const [maxPrice, setMaxPrice] = useState(2500);
 
   const filteredProducts = PRODUCTS.filter((product) => {
     return product.price <= maxPrice;
   });
-
-  const handleAddToCart = (productName) => {
-    alert(`${productName} added to cart!`);
-  };
 
   return (
     <main style={{ padding: '40px 20px', minHeight: '80vh' }}>
@@ -157,9 +153,12 @@ function Shop() {
             </p>
 
             <button
+              type="button"
               className="btn btn-primary"
-              style={{ width: '100%' }}
-              onClick={() => handleAddToCart(product.name)}
+              style={{ width: '100%', cursor: 'pointer' }}
+              onClick={() => {addToCart(product);
+              alert(`${product.name} added to cart!`);
+}}
             >
               Add to Cart 🛒
             </button>
